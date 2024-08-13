@@ -531,7 +531,7 @@ def train(args, config=config):
     logger = Logger(log_dir, config.env, config.seed, info_str=args.comment)
     logger.log_str_object("parameters", log_dict = config.__dict__)
 
-    is_env_with_goal = config.env.startswith(ENVS_WITH_GOAL)
+    is_env_with_goal = config.env.startswith(ENVS_WITH_GOAL)    # check if goal-oriented env
     batch_size_offline = int(config.batch_size * config.offline_mixing_ratio)
     batch_size_online = config.batch_size - batch_size_offline
 
